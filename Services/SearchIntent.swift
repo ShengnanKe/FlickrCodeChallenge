@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol SearchIntent {
+protocol SearchIntent { 
     associatedtype ModelType: SearchModel
     var model: ModelType { get set }
 }

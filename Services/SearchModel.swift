@@ -8,6 +8,6 @@
 import Foundation
 
 class SearchModel: ObservableObject {
-    @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = false // whenever loading data from the API
     @Published var errorMessage: String? = nil
 }

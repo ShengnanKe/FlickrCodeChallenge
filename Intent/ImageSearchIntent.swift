@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// the business logic: building the connection between the model and the view
+// take userinput and update the model state
 class ImageSearchIntent: SearchIntent {
     typealias ModelType = ImageSearchModel
     var model: ImageSearchModel
@@ -22,9 +24,10 @@ class ImageSearchIntent: SearchIntent {
         self.model.searchText = cleanedText
     }
     
+    // Where the API request is actually triggered and activated, Updates the states in the model based on the result.
     func searchImage() {
         let httpClient = HttpClient()
-        model.isLoading = true // when searching starts
+        model.isLoading = true // when searching starts: indicator for the progressor view
         let requestBuilder = FlickrRequestBuilder(tags: [model.searchText])
         
         httpClient.fetch(requestBuilder: requestBuilder)
@@ -38,6 +41,8 @@ class ImageSearchIntent: SearchIntent {
                     break
                 }
             }, receiveValue: { [weak self] (response: FlickrResponse) in
+                // using weak self for avoiding retain cycle
+                // updating model
                 if let items = response.items {
                     self?.model.items = items
                 } else {
@@ -47,6 +52,7 @@ class ImageSearchIntent: SearchIntent {
             .store(in: &cancellables)
     }
     
+    // remove spaces after comma with regular expression
     private func cleanSearchText(_ input: String) -> String {
         let cleaned = input.replacingOccurrences(of: "\\s*,\\s*", with: ",", options: .regularExpression)
         return cleaned

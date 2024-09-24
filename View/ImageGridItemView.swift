@@ -20,9 +20,9 @@ struct ImageGridItemView: View {
                     case .success(let image):
                         image.resizable().scaledToFit().frame(width: 80, height: 80)
                     case .failure:
-                        Image(systemName: "photo").resizable().scaledToFit().frame(width: 80, height: 80) // if fail shows a photo logo as placeholder
+                        Image(systemName: "photo").resizable().scaledToFit().frame(width: 80, height: 80) // if fails, shows a photo logo as placeholder
                     @unknown default:
-                        Image(systemName: "questionmark") // Missing Content
+                        Image(systemName: "questionmark") // Missing Content or unexpected content
                     }
                 }
             } else {

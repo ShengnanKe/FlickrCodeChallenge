@@ -7,6 +7,7 @@
 
 import Foundation
 
+// For parsing the Json content received from the API with Codable and Hashable protocol
 struct FlickrResponse: Codable {
     let items: [FlickrImage]?
 }
@@ -30,7 +31,7 @@ struct FlickrImage: Codable, Hashable {
 struct Media: Codable, Hashable {
     let imagePath: String?
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey { // coding key is needed for this specific link for loading the image
         case imagePath = "m"
     }
 }
