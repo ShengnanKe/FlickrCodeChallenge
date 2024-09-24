@@ -2,7 +2,7 @@
 //  FlickrCodeChallengeUITestsLaunchTests.swift
 //  FlickrCodeChallengeUITests
 //
-//  Created by KKNANXX on 9/23/24.
+//  Created by Abby Ke on 9/23/24.
 //
 
 import XCTest

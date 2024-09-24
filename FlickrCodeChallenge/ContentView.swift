@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  FlickrCodeChallenge
 //
-//  Created by KKNANXX on 9/23/24.
+//  Created by Abby Ke on 9/23/24.
 //
 
 import SwiftUI

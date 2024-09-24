@@ -2,7 +2,7 @@
 //  FlickrCodeChallengeApp.swift
 //  FlickrCodeChallenge
 //
-//  Created by KKNANXX on 9/23/24.
+//  Created by Abby Ke on 9/23/24.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct FlickrCodeChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ImageSearchView()
         }
     }
 }
