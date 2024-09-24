@@ -114,7 +114,7 @@ struct ImageDetailView: View {
             print(Constants.ErrorMessages.htmlInvalid)
             return ""
         }
-        print(html)
+        // print(html)
 
         let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
             .documentType: NSAttributedString.DocumentType.html,
